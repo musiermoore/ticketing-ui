@@ -17,5 +17,5 @@ COPY . .
 # Expose Vite default port
 EXPOSE 5173
 
-# Start dev server
-CMD ["npm", "run", "dev", "--", "--host"]
+# Start dev server and refresh dependencies for mounted workspaces
+CMD ["sh", "-lc", "npm install && npm run dev -- --host 0.0.0.0 --port 5173"]
